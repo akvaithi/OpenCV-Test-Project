@@ -2,16 +2,16 @@ import cv2
 import numpy as np 
   
 
-image = cv2.imread("C:/Users/akvai/Downloads/test.jpg", cv2.IMREAD_COLOR)
+image = cv2.imread("C:/Users/akvai/OneDrive/Documents/Code/Python Projects/OpenCV-Test-Project/test.jpg", cv2.IMREAD_COLOR)
 
  
 half = cv2.resize(image, (0, 0), fx = 0.5, fy = 0.5)
- 
-cv2.imwrite("C:/Users/akvai/Downloads/svedImage.jpg", half)
+
+cv2.imwrite("C:/Users/akvai/OneDrive/Documents/Code/Python Projects/OpenCV-Test-Project/svedImage.jpg", half)
 
 
 # Read image. 
-img = cv2.imread('C:/Users/akvai/Downloads/svedImage.jpg')
+img = cv2.imread('C:/Users/akvai/OneDrive/Documents/Code/Python Projects/OpenCV-Test-Project/svedImage.jpg')
 
 # Convert to grayscale. 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -20,7 +20,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 gray_blurred = cv2.blur(gray, (3, 3)) 
   
 # Apply Hough transform on the blurred image. 
-detected_circles = cv2.HoughCircles(gray_blurred, cv2.HOUGH_GRADIENT, 1, 20, param1 = 50, param2 = 30, minRadius = 1, maxRadius = 400) 
+detected_circles = cv2.HoughCircles(gray_blurred, cv2.HOUGH_GRADIENT, 1, 20, param1 = 50, param2 = 30, minRadius = 50, maxRadius = 100) 
   
 # Draw circles that are detected. 
 if detected_circles is not None: 
